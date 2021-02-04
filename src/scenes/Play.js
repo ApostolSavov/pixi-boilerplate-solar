@@ -1,8 +1,5 @@
-import { Sprite } from 'pixi.js';
 import Scene from './Scene';
-import gsap from 'gsap';
 import { DisplacementFilter } from '@pixi/filter-displacement'
-
 import Footer from '../components/Footer';
 import Rocket from '../components/Rocket';
 import Earth from '../components/Earth';
@@ -24,7 +21,6 @@ export default class Play extends Scene {
     earth.addChild(rocket)
     this.addChild(earth)
     this.addChild(sun)
-
 
     const footer = new Footer();
     footer.x = - window.innerWidth / 2;
