@@ -30,14 +30,14 @@ export default class Rocket extends Container {
         const fire = new Fire()
         fire.scale.set(0.6)
         fire.angle = -90
-        fire.x = 300
-        fire.y = 175
+        fire.x = 340
+        fire.y = 260
         this._fire = fire
     }
 
     _createRocket() {
         const rocket = new Sprite.from('rocket')
-        rocket.anchor.set(-3.2, 0.5)
+        rocket.pivot.set(-300, 0)
 
         this._body = rocket
     }
