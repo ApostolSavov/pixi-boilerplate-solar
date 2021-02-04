@@ -10,9 +10,10 @@ export default class Earth extends Container {
         this._init()
     }
 
-
-
-
+    /**
+     * Creates the Earth sprite
+     * @private
+     */
     _createEarth() {
         const earth = new Sprite.from('earth')
         earth.anchor.set(0.5)
@@ -23,7 +24,10 @@ export default class Earth extends Container {
         this.addChild(earth)
     }
 
-    _init(){
+    /**
+     * Initializes the class
+     */
+    _init() {
         this._createEarth()
     }
 }
