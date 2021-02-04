@@ -5,6 +5,9 @@ import Rocket from '../components/Rocket';
 import Earth from '../components/Earth';
 import Stars from '../components/Stars';
 import Sun from '../components/Sun';
+
+
+
 export default class Play extends Scene {
   async onCreated() {
 
