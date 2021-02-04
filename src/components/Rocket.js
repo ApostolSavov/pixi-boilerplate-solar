@@ -1,8 +1,6 @@
 import { Container, Sprite } from 'pixi.js'
 import Fire from './Fire.js'
 import gsap from 'gsap'
-import MotionPathPlugin from 'gsap/MotionPathPlugin'
-
 
 export default class Rocket extends Container {
     constructor() {
@@ -30,21 +28,19 @@ export default class Rocket extends Container {
         const fire = new Fire()
         fire.scale.set(0.6)
         fire.angle = -90
-        fire.x = 340
+        fire.x = 40
         fire.y = 260
         this._fire = fire
     }
 
     _createRocket() {
         const rocket = new Sprite.from('rocket')
-        rocket.pivot.set(-300, 0)
+        this.pivot.set(-300, 0)
 
         this._body = rocket
     }
 
     _init() {
-        gsap.registerPlugin(MotionPathPlugin)
-
         this._createRocket()
         this._createFire()
 
