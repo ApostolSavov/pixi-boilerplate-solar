@@ -14,6 +14,10 @@ export default class Rocket extends Container {
         this._init()
     }
 
+    /**
+     * Animates the rocket going in circle
+     * @private
+     */
     _animateRocket() {
         gsap.to(this,
             {
@@ -24,6 +28,10 @@ export default class Rocket extends Container {
             })
     }
 
+    /**
+     * creates and adds the fire container with animated sprites
+     * @private
+     */
     _createFire() {
         const fire = new Fire()
         fire.scale.set(0.6)
@@ -33,6 +41,10 @@ export default class Rocket extends Container {
         this._fire = fire
     }
 
+    /**
+     * Creates the rocket sprite
+     * @private
+     */
     _createRocket() {
         const rocket = new Sprite.from('rocket')
         this.pivot.set(-300, 0)
@@ -40,6 +52,9 @@ export default class Rocket extends Container {
         this._body = rocket
     }
 
+    /**
+     * Initializes the class
+     */
     _init() {
         this._createRocket()
         this._createFire()

@@ -16,6 +16,9 @@ export default class Sun extends Container {
         this._init();
     }
 
+    /**
+     * Plays the blast scaling animation
+     */
     animateBlast() {
 
         this._tl
@@ -28,6 +31,10 @@ export default class Sun extends Container {
                 });
     }
 
+    /**
+     * Plays the sun glow scaling animation repeatedly until
+     * @private
+     */
     _animateGlow() {
         gsap.to(this._glowTop.scale,
             {
@@ -39,6 +46,10 @@ export default class Sun extends Container {
             })
     }
 
+    /**
+     * Creates and adds the blast sprite
+     * @private
+     */
     _createBlast() {
         const blast = new Sprite.from('sunBlast');
         blast.anchor.set(0.5);
@@ -49,6 +60,10 @@ export default class Sun extends Container {
         this.addChild(blast);
     }
 
+    /**
+     * Creates and adds the sun sprite
+     * @private
+     */
     _createSun() {
         const sun = new Sprite.from('sun');
 
@@ -61,6 +76,10 @@ export default class Sun extends Container {
         this.addChild(sun);
     }
 
+    /**
+     * Creates and applies a blend mode to the glow sprites
+     * @private
+     */
     _createGlow() {
         const glowTop = new Sprite.from('sunGlow');
         const glowBot = new Sprite.from('sunGlow');
@@ -78,6 +97,10 @@ export default class Sun extends Container {
         this.addChild(glowTop, glowBot);
     }
 
+    /**
+     * Initializes the class
+     * @private
+     */
     _init() {
         this._createSun();
         this._createGlow();

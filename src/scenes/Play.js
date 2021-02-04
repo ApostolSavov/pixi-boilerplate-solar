@@ -11,15 +11,23 @@ import Sun from '../components/Sun';
 export default class Play extends Scene {
   async onCreated() {
 
+    /**
+     * Instantiating classes
+     */
     const earth = new Earth()
     const rocket = new Rocket()
     const sun = new Sun()
     const stars = new Stars(15)
 
-    const blastFilter = new DisplacementFilter(sun._blast)
-    this.filters = [blastFilter]
+    /**
+     * Creating and adding interval for the filter
+     */
+    this.filters = [new DisplacementFilter(sun._blast)]
     setInterval(sun.animateBlast.bind(sun), 5000)
 
+    /**
+     * Adding all elements to the scene
+     */
     this.addChild(stars)
     earth.addChild(rocket)
     this.addChild(earth)

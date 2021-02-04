@@ -11,6 +11,11 @@ export default class Stars extends Container {
         this._init(amount)
     }
 
+    /**
+     * Creates and adds stars randomly, based on given amount
+     * @param {number} amount 
+     * @private
+     */
     _createStar(amount = 1) {
         if (amount == 0) {
             return
@@ -29,6 +34,10 @@ export default class Stars extends Container {
         this._createStar(amount - 1)
     }
 
+    /**
+     * Animates the slight star rotation and movement randomly
+     * @private
+     */
     _animateStars() {
         gsap.to(this._stars,
             {
@@ -40,6 +49,10 @@ export default class Stars extends Container {
             })
     }
 
+    /**
+     * Initializes the class, the passed parameter to be used for the amount of stars
+     * @param {number} amount 
+     */
     _init(amount) {
         this._createStar(amount)
         this._animateStars()
