@@ -7,7 +7,6 @@ import Stars from '../components/Stars';
 import Sun from '../components/Sun';
 
 
-
 export default class Play extends Scene {
   async onCreated() {
 
@@ -22,7 +21,7 @@ export default class Play extends Scene {
     /**
      * Creating and adding interval for the filter
      */
-    this.filters = [new DisplacementFilter(sun._blast)]
+    this.parent.parent.filters = [new DisplacementFilter(sun._blast)]
     setInterval(sun.animateBlast.bind(sun), 5000)
 
     /**
